@@ -18,6 +18,7 @@ const Input = ({ type = "text", placeholder, value, name, onChange, label }: Inp
 					id={name}
 					onChange={onChange}
 					required
+					autoComplete="off"
 				/>
 			</div>
 		</div>
