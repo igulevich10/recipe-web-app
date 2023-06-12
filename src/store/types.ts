@@ -14,7 +14,7 @@ export interface User {
 
 export interface AuthState {
 	user: User | null;
-	aunthenticated: boolean;
+	authenticated: boolean;
 	loading: boolean;
 	error: string;
 	needVerification: boolean;
@@ -39,7 +39,7 @@ interface SetUserAction {
 	payload: User;
 }
 
-interface SetLoadignAction {
+interface SetLoadingAction {
 	type: typeof SET_LOADING;
 	payload: boolean;
 }
@@ -62,4 +62,4 @@ interface SetSuccessAction {
 	payload: string;
 }
 
-export type AuthAction = SetUserAction | SetLoadignAction | SignOutAction | SetErrorAction | NeedVerificationAction | SetSuccessAction;
+export type AuthAction = SetUserAction | SetLoadingAction | SignOutAction | SetErrorAction | NeedVerificationAction | SetSuccessAction;

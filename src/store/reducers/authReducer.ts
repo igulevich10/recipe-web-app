@@ -2,7 +2,7 @@ import { AuthAction, AuthState, SET_USER, SET_LOADING, SIGN_OUT, SET_ERROR, NEED
 
 const initialState: AuthState = {
 	user: null,
-	aunthenticated: false,
+	authenticated: false,
 	loading: false,
 	error: "",
 	needVerification: false,
