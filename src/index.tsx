@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./firebase/config";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bulma/css/bulma.min.css";
 import store from "./store";
 
