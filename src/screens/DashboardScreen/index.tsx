@@ -7,9 +7,13 @@ import { RootState } from "../../store";
 import { AnyAction } from "redux";
 import { ThunkDispatch } from "redux-thunk";
 import Sidebar from "../../components/Sidebar";
+import DeleteListModal from "../../components/DeleteListModal";
+import EditListModal from "../../components/EditListModal";
 
 const DashboardScreen = () => {
 	const { user, needVerification, success } = useSelector((state: RootState) => state.auth);
+	const listIdToDelete = useSelector((state: RootState) => state.list.listIdToDelete);
+	const listToEdit = useSelector((state: RootState) => state.list.listToEdit);
 	const dispatch = useDispatch<ThunkDispatch<RootState, null, AnyAction>>();
 
 	useEffect(() => {
@@ -27,6 +31,8 @@ const DashboardScreen = () => {
 				</div>
 				{/* <h1 className="is-size-1">Welcome {user?.firstName}</h1> */}
 			</div>
+			{listIdToDelete && <DeleteListModal listId={listIdToDelete} />}
+			{listToEdit && <EditListModal list={listToEdit}/>}
 		</div>
 	)
 };

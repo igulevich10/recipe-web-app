@@ -27,7 +27,9 @@
 	&.is-primary {
 		background-color: #5880ef !important;
 	}
-	
+}
+.panel-heading {
+	background-color: #ecc060 !important;
 }
 
 @keyframes spin {

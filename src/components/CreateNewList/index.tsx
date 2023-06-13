@@ -57,7 +57,7 @@ const CreateNewList = () => {
           <div className="control">
 						<Button 
 							text="Create"
-							className="is-primary is-fullwidth mt-5"
+							className="is-primary"
 						/>
           </div>
         </form>
