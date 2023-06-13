@@ -1,11 +1,13 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import Button from "../Button";
 import { RootState } from "../../store";
 import { signout } from "../../store/actions/authActions";
 import { AnyAction } from "redux";
 import { ThunkDispatch } from "redux-thunk";
+import Button from "../Button";
+
+import "./styles.scss";
 
 const Header = () => {
 	const navigate = useNavigate();
@@ -17,15 +19,15 @@ const Header = () => {
 	}
 
 	return (
-		<nav>
+		<nav className="navbar">
 			<div className="container">
 				<div className="navbar-brand">
-					<Link className="navbar-item" to={!authenticated ? "/" : "/dashboard"}>AppName</Link>
+					<Link className="navbar-item" to={!authenticated ? "/" : "/dashboard"}>RecipeWebApp</Link>
 				</div>
 			</div>
 			<div className="navbar-end">
 				<div className="navbar-items">
-					{!authenticated ? <div className="buttons">
+					{!authenticated ? <div className="buttons is-flex">
 							<Button 
 								text="Sign up"
 								onClick={() => navigate("/signup")} 

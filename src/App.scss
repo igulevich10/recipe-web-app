@@ -17,11 +17,17 @@
 
 .custom-loader {
 	border: 3px solid #f1f1f1;
-	border-top: 3px solid #00d1b2;
+	border-top: 3px solid #5880ef;
 	border-radius: 50%;
 	width: 120px;
 	height: 120px;
 	animation: spin 1s linear infinite;
+}
+.button {
+	&.is-primary {
+		background-color: #5880ef !important;
+	}
+	
 }
 
 @keyframes spin {

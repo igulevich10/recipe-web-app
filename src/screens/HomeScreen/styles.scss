@@ -1,0 +1,26 @@
+.section {
+	padding: 20px 0;
+	.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .title {
+      font-size: 48px;
+      margin-bottom: 30px;
+      text-align: center;
+			color: #5880ef;
+    }
+    
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+			color: #263238;
+    }
+		img {
+			margin-top: 20px;
+			width: 200px;
+		}
+	}
+}
