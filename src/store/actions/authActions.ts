@@ -1,6 +1,6 @@
 import { ThunkAction } from "redux-thunk";
 
-import { User, SignUpData, SignInData, SET_USER, SET_LOADING, SIGN_OUT, SET_ERROR, NEED_VERIFICATION, SET_SUCCESS, AuthAction } from "../types";
+import { User, SignUpData, SignInData, SET_USER, SET_LOADING, SIGN_OUT, SET_ERROR, NEED_VERIFICATION, SET_SUCCESS, AuthAction } from "../types/auth";
 import { RootState } from "..";
 import firebase from "../../firebase/config";
 
