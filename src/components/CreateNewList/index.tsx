@@ -6,7 +6,7 @@ import { RootState } from "../../store";
 import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "redux";
 import Button from "../UI/Button";
-import Input from "../Input";
+import Input from "../UI/Input";
 
 const CreateNewList = () => {
 	const [listName, setListName] = useState("");

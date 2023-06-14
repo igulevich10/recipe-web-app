@@ -5,7 +5,7 @@ import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "redux";
 import { Item, List } from "../../store/types/app";
 import Button from "../UI/Button";
-import Input from "../Input";
+import Input from "../UI/Input";
 import { setListToEdit, unsetItemToEdit, updateItem, updateList } from "../../store/actions/listActions";
 
 interface EditItemModalProps {

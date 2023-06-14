@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { RootState } from "../../store";
 import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "redux";
-import Input from "../Input";
+import Input from "../UI/Input";
 import Button from "../UI/Button";
 
 interface AddNewItemProps {

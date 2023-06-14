@@ -7,7 +7,7 @@ import SignInScreen from "./screens/SignInScreen";
 import ForgotPasswordScreen from "./screens/ForgotPasswordScreen";
 import HomeScreen from "./screens/HomeScreen";
 import DashboardScreen from "./screens/DashboardScreen";
-import Loader from "./components/Loader";
+import Loader from "./components/UI/Loader";
 import firebase from "./firebase/config";
 import PrivateRoute from "./routes/PrivateRoute";
 import PublicRoute from "./routes/PublicRoute";
