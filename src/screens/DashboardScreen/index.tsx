@@ -9,6 +9,7 @@ import { ThunkDispatch } from "redux-thunk";
 import Sidebar from "../../components/Sidebar";
 import DeleteListModal from "../../components/DeleteListModal";
 import EditListModal from "../../components/EditListModal";
+import Content from "../../components/Сontent";
 
 const DashboardScreen = () => {
 	const { user, needVerification, success } = useSelector((state: RootState) => state.auth);
@@ -25,9 +26,10 @@ const DashboardScreen = () => {
 	return (
 		<div className="dashboard">
 			{needVerification && <Message type="success" msg="Please verify your email"/>}
-			<div className="dashboard-holder px-5">
-				<div className="dashboard-columns">
+			<div className="container mt-5">
+				<div className="columns">
 					<Sidebar />
+					<Content />
 				</div>
 				{/* <h1 className="is-size-1">Welcome {user?.firstName}</h1> */}
 			</div>
