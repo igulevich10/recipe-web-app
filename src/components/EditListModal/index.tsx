@@ -20,11 +20,11 @@ const EditListModal = ({list}: EditListModalProps) => {
 		e.preventDefault();
 
 		if(listName.trim() === "") {
-			return alert ("Recipe name is required")
+			return alert ("Recipe name is required");
 		}
 
-		if(listName.trim() === "") {
-			return alert ("Recipe name is the same as before")
+		if(listName.trim() === list.name) {
+			return alert ("Recipe name is the same as before");
 		}
 
 		dispatch(updateList(list.id, listName.trim()));
@@ -45,8 +45,8 @@ const EditListModal = ({list}: EditListModalProps) => {
 				<header className="modal-card-head">
 					<p className="modal-card-title">Edit Recipe</p>
 					<Button 
-						text="Delete"
-						className="delete"
+						text="&#10006;"
+						className="is-secondary"
 						onClick={onHideModal}
 					/>
 				</header>
