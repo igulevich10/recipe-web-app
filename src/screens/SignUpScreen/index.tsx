@@ -1,8 +1,8 @@
 import React, { useState, useEffect, FormEvent } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Input from "../../components/Input";
-import Button from "../../components/Button";
-import Message from "../../components/Message";
+import Input from "../../components/UI/Input";
+import Button from "../../components/UI/Button";
+import Message from "../../components/UI/Message";
 import { signup, setError } from "../../store/actions/authActions";
 import { RootState } from "../../store";
 import { AnyAction } from "redux";

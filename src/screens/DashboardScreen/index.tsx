@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import Message from "../../components/Message";
+import Message from "../../components/UI/Message";
 import { setSuccess } from "../../store/actions/authActions";
 import { RootState } from "../../store";
 import { AnyAction } from "redux";

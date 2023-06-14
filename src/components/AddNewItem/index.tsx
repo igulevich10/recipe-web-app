@@ -6,7 +6,7 @@ import { RootState } from "../../store";
 import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "redux";
 import Input from "../Input";
-import Button from "../Button";
+import Button from "../UI/Button";
 
 interface AddNewItemProps {
 	list: List;
@@ -56,7 +56,7 @@ const AddNewItem = ({list}: AddNewItemProps) => {
 					</div>
 					<div className="control mt-4">
 						<Button 
-							text="Create"
+							text="Add"
 							className="is-primary"
 						/>
 					</div>

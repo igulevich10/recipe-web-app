@@ -4,7 +4,7 @@ import { RootState } from "../../store";
 import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "redux";
 import { List } from "../../store/types/app";
-import Button from "../Button";
+import Button from "../UI/Button";
 import Input from "../Input";
 import { setListToEdit, updateList } from "../../store/actions/listActions";
 

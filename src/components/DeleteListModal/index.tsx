@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Button from "../Button";
+import Button from "../UI/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { ThunkDispatch } from "@reduxjs/toolkit";

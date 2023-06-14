@@ -5,7 +5,7 @@ import { RootState } from "../../store";
 import { signout } from "../../store/actions/authActions";
 import { AnyAction } from "redux";
 import { ThunkDispatch } from "redux-thunk";
-import Button from "../Button";
+import Button from "../UI/Button";
 
 import "./styles.scss";
 

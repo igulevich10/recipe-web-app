@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { RootState } from "../../store";
 import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "redux";
-import Button from "../Button";
+import Button from "../UI/Button";
 import Input from "../Input";
 
 const CreateNewList = () => {

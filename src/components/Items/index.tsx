@@ -5,7 +5,7 @@ import { ThunkDispatch } from "@reduxjs/toolkit";
 import { AnyAction } from "redux";
 import { Item } from "../../store/types/app";
 import { setItemToEdit, setItemToDelete } from "../../store/actions/listActions";
-import Button from "../Button";
+import Button from "../UI/Button";
 
 interface ItemsProps {
 	items: Item[];
