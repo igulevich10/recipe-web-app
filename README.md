@@ -1,6 +1,11 @@
-# Getting Started with Create React App
+# Recipe Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple recipe manager application with user authorization, creating, editing and deleting a list of recipes and items.
+The application is written in React, Typescript. It also uses Redux(state manager), Firebase(for authorization and db), Sass & bulma(for styling).
+
+The project is initialized with yarn.
+
+You can also check it out here: https://recipe-web-app-4c4af.web.app.
 
 ## Available Scripts
 
