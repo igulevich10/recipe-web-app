@@ -1,4 +1,4 @@
-import { ADD_LIST, GET_LISTS, GET_LIST_BY_ID, SET_LISTID_TO_DELETE, SET_LIST_TO_EDIT, DELETE_LIST, UPDATE_LIST } from './../types/app';
+import { ADD_LIST, GET_LISTS, GET_LIST_BY_ID, SET_LISTID_TO_DELETE, SET_LIST_TO_EDIT, DELETE_LIST, UPDATE_LIST, SET_SELECTED_LIST, ADD_ITEM, SET_ITEM_TO_DELETE, UNSET_ITEM_TO_DELETE, DELETE_ITEM, SET_ITEM_TO_EDIT, UNSET_ITEM_TO_EDIT, UPDATE_ITEM } from './../types/app';
 import { Lists, ListsAction, ListState } from "../types/app";
 
 const initialState: ListState = {
@@ -84,6 +84,88 @@ export default (state = initialState, action: ListsAction): ListState => {
         lists: clonedListsFromLS3,
         listToEdit: null
       }
+
+		case SET_SELECTED_LIST:
+			const selectedList = getListsFromLS()[action.payload];
+			return {
+				...state,
+				selectedList: selectedList
+			}
+
+		case ADD_ITEM:
+			const clonedListsFromLS4 = {...listsFromLS};
+			clonedListsFromLS4[action.payload.list.id].items.push(action.payload.item);
+			saveListsToLS(clonedListsFromLS4);
+			return {
+				...state,
+				lists: clonedListsFromLS4,
+				selectedList: clonedListsFromLS4[action.payload.list.id]
+			}
+		
+		case SET_ITEM_TO_DELETE:
+			return {
+				...state,
+				itemToDelete: {
+					item: action.payload.item,
+					list: action.payload.list
+				}
+			}
+		
+		case UNSET_ITEM_TO_DELETE:
+			return {
+				...state,
+				itemToDelete: null
+			}
+
+		case DELETE_ITEM:
+			const clonedListsFromLS5 = {...listsFromLS};
+			const clonedItems = [...clonedListsFromLS5[state.itemToDelete!.list.id].items];
+			const item = clonedItems.find(item => item.id === state.itemToDelete!.item.id);
+			clonedItems.splice(clonedItems.indexOf(item!), 1);
+			clonedListsFromLS5[state.itemToDelete!.list.id].items = clonedItems;
+			saveListsToLS(clonedListsFromLS5);
+			return {
+				...state,
+				lists: clonedListsFromLS5,
+				selectedList: clonedListsFromLS5[state.itemToDelete!.list.id],
+				itemToDelete: null
+			}
+
+		case SET_ITEM_TO_EDIT:
+			return {
+				...state,
+				itemToEdit: {
+					item: action.payload.item,
+					list: action.payload.list
+				}
+			}
+
+		case UNSET_ITEM_TO_EDIT:
+			return {
+				...state,
+				itemToEdit: null
+			}
+
+		case UPDATE_ITEM:
+			const clonedListsFromLS6 = {...listsFromLS};
+			const clonedList = {...clonedListsFromLS6[action.payload.list.id]};
+			const clonedItems2 = [...clonedList.items];
+			const item2 = clonedItems2.find(item => item.id === action.payload.itemId);
+			const clonedItem = {...item2!};
+			clonedItem.name = action.payload.itemName;
+			clonedItem.completed = action.payload.itemState;
+			const updatedItems = clonedItems2.map(item => item.id === clonedItem.id ? clonedItem : item);
+			clonedList.items = updatedItems;
+      clonedListsFromLS6[clonedList.id] = clonedList;
+      saveListsToLS(clonedListsFromLS6);
+      return {
+        ...state,
+        lists: clonedListsFromLS6,
+        selectedList: clonedList,
+				itemToEdit: null
+      }
+
+		
 		default:
 			return state;
 	}

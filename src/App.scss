@@ -23,13 +23,29 @@
 	height: 120px;
 	animation: spin 1s linear infinite;
 }
+
 .button {
 	&.is-primary {
 		background-color: #5880ef !important;
 	}
 }
+
+.panel-block {
+	justify-content: space-between;
+	p {
+		cursor: pointer;
+		margin-right: auto;
+	}
+}
+.panel-icon{
+  margin-right: 0;
+  cursor: pointer;
+}
 .panel-heading {
 	background-color: #ecc060 !important;
+}
+.fullwidth {
+  width: 100%;
 }
 
 @keyframes spin {
